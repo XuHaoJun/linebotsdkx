@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// VideoMessage
     /// </summary>
     [DataContract(Name = "VideoMessage")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class VideoMessage : Message, IValidatableObject
     {
         /// <summary>

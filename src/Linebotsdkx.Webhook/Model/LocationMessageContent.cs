@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// LocationMessageContent
     /// </summary>
     [DataContract(Name = "LocationMessageContent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class LocationMessageContent : MessageContent, IValidatableObject
     {
         /// <summary>

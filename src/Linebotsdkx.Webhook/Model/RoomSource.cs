@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// RoomSource
     /// </summary>
     [DataContract(Name = "RoomSource")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class RoomSource : Source, IValidatableObject
     {
         /// <summary>

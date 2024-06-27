@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// FlexButton
     /// </summary>
     [DataContract(Name = "FlexButton")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class FlexButton : FlexComponent, IValidatableObject
     {
         /// <summary>

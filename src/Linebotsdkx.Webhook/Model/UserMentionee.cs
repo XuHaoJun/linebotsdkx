@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// Mentioned target is user
     /// </summary>
     [DataContract(Name = "UserMentionee")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class UserMentionee : Mentionee, IValidatableObject
     {
         /// <summary>

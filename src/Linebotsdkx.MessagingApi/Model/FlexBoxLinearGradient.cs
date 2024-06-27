@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// FlexBoxLinearGradient
     /// </summary>
     [DataContract(Name = "FlexBoxLinearGradient")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class FlexBoxLinearGradient : FlexBoxBackground, IValidatableObject
     {
         /// <summary>

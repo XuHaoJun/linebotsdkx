@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// This event indicates that the module channel has been switched to Standby Channel by calling Acquire Control API or Release Control API. Sent to the webhook URL server of the module channel.
     /// </summary>
     [DataContract(Name = "DeactivatedEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class DeactivatedEvent : Event, IValidatableObject
     {
         /// <summary>

@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// Event for when a user finishes viewing a video at least once with the specified trackingId sent by the LINE Official Account.
     /// </summary>
     [DataContract(Name = "VideoPlayCompleteEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class VideoPlayCompleteEvent : Event, IValidatableObject
     {
         /// <summary>

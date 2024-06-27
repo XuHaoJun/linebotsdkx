@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// RichMenuSwitchAction
     /// </summary>
     [DataContract(Name = "RichMenuSwitchAction")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class RichMenuSwitchAction : Action, IValidatableObject
     {
         /// <summary>

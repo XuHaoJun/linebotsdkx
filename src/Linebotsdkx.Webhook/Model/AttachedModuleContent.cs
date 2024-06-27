@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// AttachedModuleContent
     /// </summary>
     [DataContract(Name = "AttachedModuleContent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class AttachedModuleContent : ModuleContent, IValidatableObject
     {
         /// <summary>

@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// StickerMessageContent
     /// </summary>
     [DataContract(Name = "StickerMessageContent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class StickerMessageContent : MessageContent, IValidatableObject
     {
         /// <summary>

@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// FlexVideo
     /// </summary>
     [DataContract(Name = "FlexVideo")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class FlexVideo : FlexComponent, IValidatableObject
     {
         /// <summary>

@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// ImageMessageContent
     /// </summary>
     [DataContract(Name = "ImageMessageContent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class ImageMessageContent : MessageContent, IValidatableObject
     {
         /// <summary>

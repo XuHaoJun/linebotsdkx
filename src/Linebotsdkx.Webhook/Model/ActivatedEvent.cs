@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// This event indicates that the module channel has been switched to Active Channel by calling the Acquire Control API. Sent to the webhook URL server of the module channel.
     /// </summary>
     [DataContract(Name = "ActivatedEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class ActivatedEvent : Event, IValidatableObject
     {
         /// <summary>

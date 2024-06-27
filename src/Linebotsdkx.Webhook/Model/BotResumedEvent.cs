@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// This event indicates that the LINE Official Account has returned from the suspended state. Sent to the webhook URL server of the module channel.
     /// </summary>
     [DataContract(Name = "BotResumedEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class BotResumedEvent : Event, IValidatableObject
     {
         /// <summary>

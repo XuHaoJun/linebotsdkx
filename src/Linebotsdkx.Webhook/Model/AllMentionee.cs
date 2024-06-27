@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// Mentioned target is entire group
     /// </summary>
     [DataContract(Name = "AllMentionee")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class AllMentionee : Mentionee, IValidatableObject
     {
         /// <summary>

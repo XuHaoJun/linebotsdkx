@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// TemplateMessage
     /// </summary>
     [DataContract(Name = "TemplateMessage")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class TemplateMessage : Message, IValidatableObject
     {
         /// <summary>

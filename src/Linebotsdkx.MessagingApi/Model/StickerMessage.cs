@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// StickerMessage
     /// </summary>
     [DataContract(Name = "StickerMessage")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class StickerMessage : Message, IValidatableObject
     {
         /// <summary>

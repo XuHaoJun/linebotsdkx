@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// CameraAction
     /// </summary>
     [DataContract(Name = "CameraAction")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class CameraAction : Action, IValidatableObject
     {
         /// <summary>

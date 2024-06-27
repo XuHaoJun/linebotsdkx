@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// Unlink the rich menu for all users linked to the rich menu specified in the &#x60;from&#x60; property.
     /// </summary>
     [DataContract(Name = "RichMenuBatchUnlinkOperation")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class RichMenuBatchUnlinkOperation : RichMenuBatchOperation, IValidatableObject
     {
         /// <summary>

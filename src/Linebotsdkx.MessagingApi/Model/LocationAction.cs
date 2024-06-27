@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// LocationAction
     /// </summary>
     [DataContract(Name = "LocationAction")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class LocationAction : Action, IValidatableObject
     {
         /// <summary>

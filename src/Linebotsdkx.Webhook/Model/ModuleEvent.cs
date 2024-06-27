@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// This event indicates that the module channel has been attached to the LINE Official Account. Sent to the webhook URL server of the module channel.
     /// </summary>
     [DataContract(Name = "ModuleEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class ModuleEvent : Event, IValidatableObject
     {
         /// <summary>

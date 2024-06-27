@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// ConfirmTemplate
     /// </summary>
     [DataContract(Name = "ConfirmTemplate")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class ConfirmTemplate : Template, IValidatableObject
     {
         /// <summary>

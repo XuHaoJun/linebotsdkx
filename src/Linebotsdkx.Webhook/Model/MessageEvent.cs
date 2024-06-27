@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// Webhook event object which contains the sent message.
     /// </summary>
     [DataContract(Name = "MessageEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class MessageEvent : Event, IValidatableObject
     {
         /// <summary>

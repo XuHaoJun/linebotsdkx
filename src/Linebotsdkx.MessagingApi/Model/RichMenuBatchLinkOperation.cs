@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// Replace the rich menu with the rich menu specified in the &#x60;to&#x60; property for all users linked to the rich menu specified in the &#x60;from&#x60; property.
     /// </summary>
     [DataContract(Name = "RichMenuBatchLinkOperation")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class RichMenuBatchLinkOperation : RichMenuBatchOperation, IValidatableObject
     {
         /// <summary>

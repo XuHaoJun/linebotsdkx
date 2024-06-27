@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// FlexBubble
     /// </summary>
     [DataContract(Name = "FlexBubble")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class FlexBubble : FlexContainer, IValidatableObject
     {
         /// <summary>

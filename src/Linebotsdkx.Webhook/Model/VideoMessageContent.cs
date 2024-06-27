@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// VideoMessageContent
     /// </summary>
     [DataContract(Name = "VideoMessageContent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class VideoMessageContent : MessageContent, IValidatableObject
     {
         /// <summary>

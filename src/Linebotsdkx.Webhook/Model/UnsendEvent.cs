@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// Event object for when the user unsends a message.
     /// </summary>
     [DataContract(Name = "UnsendEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class UnsendEvent : Event, IValidatableObject
     {
         /// <summary>

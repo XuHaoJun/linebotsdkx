@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// Event object for when a user has linked their LINE account with a provider&#39;s service account. You can reply to account link events.
     /// </summary>
     [DataContract(Name = "AccountLinkEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class AccountLinkEvent : Event, IValidatableObject
     {
         /// <summary>

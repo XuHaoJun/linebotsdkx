@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// Event object for when a user joins a group chat or multi-person chat that the LINE Official Account is in.
     /// </summary>
     [DataContract(Name = "MemberJoinedEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class MemberJoinedEvent : Event, IValidatableObject
     {
         /// <summary>

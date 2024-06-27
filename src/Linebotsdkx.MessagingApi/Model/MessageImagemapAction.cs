@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// MessageImagemapAction
     /// </summary>
     [DataContract(Name = "MessageImagemapAction")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class MessageImagemapAction : ImagemapAction, IValidatableObject
     {
         /// <summary>

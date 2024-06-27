@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// AgeDemographicFilter
     /// </summary>
     [DataContract(Name = "AgeDemographicFilter")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class AgeDemographicFilter : DemographicFilter, IValidatableObject
     {
 

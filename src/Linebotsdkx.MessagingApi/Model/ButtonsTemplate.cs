@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// ButtonsTemplate
     /// </summary>
     [DataContract(Name = "ButtonsTemplate")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class ButtonsTemplate : Template, IValidatableObject
     {
         /// <summary>

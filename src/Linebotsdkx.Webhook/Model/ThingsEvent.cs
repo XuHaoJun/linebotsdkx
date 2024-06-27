@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// Indicates that a user linked a device with LINE.
     /// </summary>
     [DataContract(Name = "ThingsEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class ThingsEvent : Event, IValidatableObject
     {
         /// <summary>

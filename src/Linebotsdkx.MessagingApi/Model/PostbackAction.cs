@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// PostbackAction
     /// </summary>
     [DataContract(Name = "PostbackAction")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class PostbackAction : Action, IValidatableObject
     {
         /// <summary>

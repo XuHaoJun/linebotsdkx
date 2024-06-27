@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// ScenarioResultThingsContent
     /// </summary>
     [DataContract(Name = "ScenarioResultThingsContent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class ScenarioResultThingsContent : ThingsContent, IValidatableObject
     {
         /// <summary>

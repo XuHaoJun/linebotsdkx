@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// SubscriptionPeriodDemographicFilter
     /// </summary>
     [DataContract(Name = "SubscriptionPeriodDemographicFilter")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class SubscriptionPeriodDemographicFilter : DemographicFilter, IValidatableObject
     {
 

@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// Event object for when a user performs a postback action which initiates a postback. You can reply to postback events.
     /// </summary>
     [DataContract(Name = "PostbackEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class PostbackEvent : Event, IValidatableObject
     {
         /// <summary>

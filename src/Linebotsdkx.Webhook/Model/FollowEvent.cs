@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// Event object for when your LINE Official Account is added as a friend (or unblocked). You can reply to follow events.
     /// </summary>
     [DataContract(Name = "FollowEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class FollowEvent : Event, IValidatableObject
     {
         /// <summary>

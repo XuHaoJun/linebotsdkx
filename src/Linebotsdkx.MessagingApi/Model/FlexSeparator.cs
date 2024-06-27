@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// FlexSeparator
     /// </summary>
     [DataContract(Name = "FlexSeparator")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class FlexSeparator : FlexComponent, IValidatableObject
     {
         /// <summary>

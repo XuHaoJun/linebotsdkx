@@ -56,3 +56,7 @@ public class LineController : ControllerBase
     }
 }
 ```
+
+## Issues
+
+- [[csharp-netcore] Incorrect JsonConverter attribute added to polymorphic sub-classes](https://github.com/OpenAPITools/openapi-generator/issues/15302)

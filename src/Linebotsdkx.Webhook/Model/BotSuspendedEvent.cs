@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// This event indicates that the LINE Official Account has been suspended (Suspend). Sent to the webhook URL server of the module channel.
     /// </summary>
     [DataContract(Name = "BotSuspendedEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class BotSuspendedEvent : Event, IValidatableObject
     {
         /// <summary>

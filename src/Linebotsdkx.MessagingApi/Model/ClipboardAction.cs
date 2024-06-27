@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// ClipboardAction
     /// </summary>
     [DataContract(Name = "ClipboardAction")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class ClipboardAction : Action, IValidatableObject
     {
         /// <summary>

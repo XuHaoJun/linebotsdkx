@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// CarouselTemplate
     /// </summary>
     [DataContract(Name = "CarouselTemplate")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class CarouselTemplate : Template, IValidatableObject
     {
         /// <summary>

@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// UnlinkThingsContent
     /// </summary>
     [DataContract(Name = "UnlinkThingsContent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class UnlinkThingsContent : ThingsContent, IValidatableObject
     {
         /// <summary>

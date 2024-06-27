@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// Event object for when a user leaves a group chat or multi-person chat that the LINE Official Account is in.
     /// </summary>
     [DataContract(Name = "MemberLeftEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class MemberLeftEvent : Event, IValidatableObject
     {
         /// <summary>

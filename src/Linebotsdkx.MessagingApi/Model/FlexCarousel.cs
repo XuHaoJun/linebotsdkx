@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// FlexCarousel
     /// </summary>
     [DataContract(Name = "FlexCarousel")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class FlexCarousel : FlexContainer, IValidatableObject
     {
         /// <summary>

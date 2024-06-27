@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// GroupSource
     /// </summary>
     [DataContract(Name = "GroupSource")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class GroupSource : Source, IValidatableObject
     {
         /// <summary>

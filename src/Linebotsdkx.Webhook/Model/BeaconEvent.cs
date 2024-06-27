@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// Event object for when a user enters the range of a LINE Beacon. You can reply to beacon events.
     /// </summary>
     [DataContract(Name = "BeaconEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class BeaconEvent : Event, IValidatableObject
     {
         /// <summary>

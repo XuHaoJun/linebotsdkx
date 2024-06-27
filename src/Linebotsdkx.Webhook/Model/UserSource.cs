@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// UserSource
     /// </summary>
     [DataContract(Name = "UserSource")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class UserSource : Source, IValidatableObject
     {
         /// <summary>

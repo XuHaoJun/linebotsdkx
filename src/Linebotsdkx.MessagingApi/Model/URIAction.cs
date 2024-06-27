@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// URIAction
     /// </summary>
     [DataContract(Name = "URIAction")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class URIAction : Action, IValidatableObject
     {
         /// <summary>

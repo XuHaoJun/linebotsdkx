@@ -30,7 +30,6 @@ namespace Linebotsdkx.Webhook.Model
     /// Event object for when your LINE Official Account is blocked.
     /// </summary>
     [DataContract(Name = "UnfollowEvent")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class UnfollowEvent : Event, IValidatableObject
     {
         /// <summary>

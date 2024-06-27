@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// DatetimePickerAction
     /// </summary>
     [DataContract(Name = "DatetimePickerAction")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class DatetimePickerAction : Action, IValidatableObject
     {
         /// <summary>

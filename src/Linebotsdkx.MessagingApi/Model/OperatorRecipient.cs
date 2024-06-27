@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// OperatorRecipient
     /// </summary>
     [DataContract(Name = "OperatorRecipient")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class OperatorRecipient : Recipient, IValidatableObject
     {
         /// <summary>

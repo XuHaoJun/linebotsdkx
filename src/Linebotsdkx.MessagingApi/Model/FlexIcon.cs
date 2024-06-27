@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// FlexIcon
     /// </summary>
     [DataContract(Name = "FlexIcon")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class FlexIcon : FlexComponent, IValidatableObject
     {
         /// <summary>

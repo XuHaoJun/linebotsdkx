@@ -30,7 +30,6 @@ namespace Linebotsdkx.MessagingApi.Model
     /// FlexFiller
     /// </summary>
     [DataContract(Name = "FlexFiller")]
-    [JsonConverter(typeof(JsonSubtypes), "Type")]
     public partial class FlexFiller : FlexComponent, IValidatableObject
     {
         /// <summary>

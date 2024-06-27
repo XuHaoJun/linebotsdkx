@@ -12,7 +12,7 @@
     <Description>A library generated from a OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>Linebotsdkx.Webhook</RootNamespace>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Linebotsdkx.Webhook.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/xuhaojun/linebotsdkx.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

@@ -1,0 +1,40 @@
+{
+  "projects": [
+    {
+      "spec": "messaging-api.yml",
+      "packageName": "Linebotsdkx.MessagingApi"
+    },
+    {
+      "spec": "insight.yml",
+      "packageName": "Linebotsdkx.Insight"
+    },
+    {
+      "spec": "module.yml",
+      "packageName": "Linebotsdkx.Module"
+    },
+    {
+      "spec": "module-attach.yml",
+      "packageName": "Linebotsdkx.ModuleAttach"
+    },
+    {
+      "spec": "webhook.yml",
+      "packageName": "Linebotsdkx.Webhook"
+    },
+    {
+      "spec": "shop.yml",
+      "packageName": "Linebotsdkx.Shop"
+    },
+    {
+      "spec": "manage-audience.yml",
+      "packageName": "Linebotsdkx.ManageAudience"
+    },
+    {
+      "spec": "liff.yml",
+      "packageName": "Linebotsdkx.Liff"
+    },
+    {
+      "spec": "channel-access-token.yml",
+      "packageName": "Linebotsdkx.ChannelAccessToken"
+    }
+  ]
+}

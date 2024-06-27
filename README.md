@@ -45,12 +45,14 @@ dotnet add package Linebotsdkx.MvcUtility
 public class LineController : ControllerBase
 {
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] Linebotsdkx.Webhook.CallbackRequest body)
+    public async Task<IActionResult> Post()
     {
-        if (!Linebotsdkx.MvcUtility.SignatureValidation(this, yourChannelSecert))
+        if (!Linebotsdkx.MvcUtility.SignatureValidation(this, "<YOUR_CHANNEL_SECRET>"))
         {
             // invalid
+            return BadRequest();
         }
+        var body = Linebotsdkx.MvcUtility.WebhookResultDeserialize(this);
         body.Events; // webhook event objects from LINE Platform
         body.Destination; // user ID of the bot
     }

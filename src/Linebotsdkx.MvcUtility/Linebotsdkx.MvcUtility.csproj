@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <PackageReference Include="Linebotsdkx.Utility" Version="1.0.2" />
+    <PackageReference Include="Linebotsdkx.Webhook" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>

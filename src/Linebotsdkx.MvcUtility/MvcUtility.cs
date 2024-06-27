@@ -1,17 +1,20 @@
 namespace Linebotsdkx;
 
 using System.IO;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 public static class MvcUtility
 {
-    public static bool SignatureValidation(ControllerBase ApiController, string lineChannelSecret)
+    public static bool SignatureValidation(ControllerBase controller, string lineChannelSecret)
     {
-        if (ApiController.Request.Headers.TryGetValue("X-Line-Signature", out var value))
+        if (controller.Request.Headers.TryGetValue("X-Line-Signature", out var value))
         {
             string text = value.ToArray()[0];
             string body = "";
-            using (StreamReader streamReader = new StreamReader(ApiController.Request.Body))
+            controller.Request.EnableBuffering();
+            controller.Request.Body.Position = 0;
+            using (StreamReader streamReader = new(controller.Request.Body))
             {
                 body = streamReader.ReadToEnd();
             }

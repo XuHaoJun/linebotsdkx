@@ -12,7 +12,7 @@
     <Description>A library generated from a OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>Linebotsdkx</RootNamespace>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <RepositoryUrl>https://github.com/XuHaoJun/linebotsdkx.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Minor update</PackageReleaseNotes>
@@ -24,8 +24,8 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Linebotsdkx.Utility" Version="1.0.2" />
-    <PackageReference Include="Linebotsdkx.Webhook" Version="1.0.2" />
+    <PackageReference Include="Linebotsdkx.Utility" Version="1.0.4" />
+    <PackageReference Include="Linebotsdkx.Webhook" Version="1.0.4" />
   </ItemGroup>
 
   <ItemGroup>

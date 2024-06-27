@@ -4,11 +4,6 @@ const fs = require("fs-extra");
 const pattern = "**/*.cs"; // Adjust the pattern as needed
 
 const files = globSync(pattern);
-console.log(files);
-// if (err) {
-//   console.error("Error finding files:", err);
-//   return;
-// }
 
 files.forEach((file) => {
   if (file.includes("Test") || !file.includes("Model") || file.includes("obj")) {

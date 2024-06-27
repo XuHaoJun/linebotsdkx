@@ -17,7 +17,7 @@ fs.readFile("./generator/projects.json", "utf8", (err, data) => {
     const spec = project.spec;
     const packageName = project.packageName;
 
-    const command = `openapi-generator generate -i line-openapi/${spec} -g csharp -o ./ -c ./generator/openapi-generator-config.yaml -p "packageName=${packageName}"`;
+    const command = `openapi-generator generate -i line-openapi/${spec} -g csharp -o ./ -c ./generator/openapi-generator-config.yaml -p "packageName=${packageName}" --git-user-id "${json["git-user-id"]}" --git-repo-id "${json["git-repo-id"]}"`;
 
     exec(command, (err, stdout, stderr) => {
       if (err) {

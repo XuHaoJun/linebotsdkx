@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+    <AssemblyName>Linebotsdkx.MvcUtility</AssemblyName>
+    <PackageId>Linebotsdkx.MvcUtility</PackageId>
+    <OutputType>Library</OutputType>
+    <Authors>OpenAPI</Authors>
+    <Company>OpenAPI</Company>
+    <AssemblyTitle>OpenAPI Library</AssemblyTitle>
+    <Description>A library generated from a OpenAPI doc</Description>
+    <Copyright>No Copyright</Copyright>
+    <RootNamespace>Linebotsdkx</RootNamespace>
+    <Version>1.0.2</Version>
+    <RepositoryUrl>https://github.com/XuHaoJun/linebotsdkx.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Minor update</PackageReleaseNotes>
+    <Nullable>annotations</Nullable>
+  </PropertyGroup>
+  
+  <ItemGroup Condition="$(TargetFramework) == 'netcoreapp3.1' Or $(TargetFramework) == 'net5.0' Or $(TargetFramework) == 'net6.0' Or $(TargetFramework) == 'net7.0' Or $(TargetFramework) == 'net8.0'">
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LineBotSDk" Version="2.13.39" />
+    <PackageReference Include="Linebotsdkx.Utility" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web" />
+  </ItemGroup>
+</Project>

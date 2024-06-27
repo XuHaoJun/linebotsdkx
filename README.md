@@ -13,7 +13,8 @@ dotnet add package Linebotsdkx.MessagingApi
 ```c#
 using Linebotsdkx.MessagingApi.Api;
 
-var client = new MessagingApiApi(
+var client = new MessagingApiApi
+(
     new Configuration()
     {
         DefaultHeaders = new Dictionary<string, string>
@@ -22,9 +23,36 @@ var client = new MessagingApiApi(
         }
     }
 );
-var body = new BroadcastRequest(
-    new List<Message> { new TextMessage(type: "text", text: "hello") },
-    new List<Message> { new TextMessage(type: "text", text: "world!") }
+var body = new BroadcastRequest
+(
+    new List<Message>
+    {
+      new TextMessage(type: "text", text: "hello"),
+      new TextMessage(type: "text", text: "world!")
+    },
 );
 await client.BroadcastAsync(body);
+```
+
+## webhook example
+
+```sh
+dotnet add package Linebotsdkx.Webhook
+dotnet add package Linebotsdkx.MvcUtility
+```
+
+```c#
+public class LineController : ControllerBase
+{
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] Linebotsdkx.Webhook.CallbackRequest body)
+    {
+        if (!Linebotsdkx.MvcUtility.SignatureValidation(this, yourChannelSecert))
+        {
+            // invalid
+        }
+        body.Events; // webhook event objects from LINE Platform
+        body.Destination; // user ID of the bot
+    }
+}
 ```

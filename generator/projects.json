@@ -1,4 +1,6 @@
 {
+  "git-user-id": "xuhaojun",
+  "git-repo-id": "linebotsdkx",
   "projects": [
     {
       "spec": "messaging-api.yml",

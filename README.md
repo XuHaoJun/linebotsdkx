@@ -95,9 +95,9 @@ public class LineController : ControllerBase
             if (x is MessageEvent && x.Source is UserSource)
             {
                 var messageEvent = x as MessageEvent;
-                var userSource = x.Source as UserSource;
                 if (messageEvent.Message is TextMessageContent) 
                 {
+                  var userSource = x.Source as UserSource;
                   var textMessageContent = messageEvent.Message as TextMessageContent;
                   var echoBody = new PushMessageRequest(
                       to: userSource.UserId,

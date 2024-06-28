@@ -15,7 +15,7 @@ using Linebotsdkx.MessagingApi.Api;
 
 var client = new MessagingApiApi
 (
-    new Configuration()
+    new Linebotsdkx.MessagingApi.Client.Configuration()
     {
         DefaultHeaders = new Dictionary<string, string>
         {

@@ -12,6 +12,7 @@ dotnet add package Linebotsdkx.MessagingApi
 
 ```c#
 using Linebotsdkx.MessagingApi.Api;
+using Linebotsdkx.MessagingApi.Model;
 
 var client = new MessagingApiApi
 (

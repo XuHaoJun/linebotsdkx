@@ -32,7 +32,41 @@ var body = new BroadcastRequest
       new TextMessage(type: "text", text: "world!")
     },
 );
-await client.BroadcastAsync(body);
+var resp = await client.BroadcastAsync(body);
+
+
+
+
+// Imagemap with PushMessageAsync example
+// example image form https://github.com/isdaviddong/HOL-LineBotSDK/blob/master/basic/Lab%2003%3A%E5%A6%82%E4%BD%95%E7%99%BC%E9%80%81ImageMap%E8%A8%8A%E6%81%AF.md
+
+var body2 = new PushMessageRequest(
+    to: "<YOUR_LINE_USER_ID>",
+    messages: new List<Message>
+    {
+        new ImagemapMessage(
+            type: "imagemap",
+            baseUrl: "https://i.imgur.com/leKztCj.png",
+            altText: "test",
+            baseSize: new ImagemapBaseSize(1040, 1040),
+            actions:
+              new List<ImagemapAction>
+              {
+                new URIImagemapAction(
+                  type: "uri",
+                  linkUri: "https://zh.wikipedia.org/wiki/%E9%B6%AF%E6%AD%8C%E5%8D%80",
+                  area: new ImagemapArea(0, 0, 500, 1040)
+                ),
+                new URIImagemapAction(
+                  type: "uri",
+                  linkUri: "https://zh.wikipedia.org/wiki/%E5%85%AB%E5%BE%B7%E5%8D%80",
+                  area: new ImagemapArea(0, 0, 1040, 1040)
+                )
+              }
+        )
+    }
+);
+var resp2 = await client.PushMessageAsync(body2);
 ```
 
 ## webhook example

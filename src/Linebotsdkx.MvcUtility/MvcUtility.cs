@@ -1,6 +1,7 @@
 namespace Linebotsdkx;
 
 using System.IO;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -8,18 +9,17 @@ using Newtonsoft.Json.Serialization;
 
 public static class MvcUtility
 {
-    public static bool SignatureValidation(ControllerBase controller, string lineChannelSecret)
+    public static async Task<bool> SignatureValidationAsync(
+        ControllerBase controller,
+        string lineChannelSecret
+    )
     {
         if (controller.Request.Headers.TryGetValue("X-Line-Signature", out var value))
         {
             string text = value.ToArray()[0];
-            string body = "";
             controller.Request.EnableBuffering();
             controller.Request.Body.Position = 0;
-            using (StreamReader streamReader = new(controller.Request.Body))
-            {
-                body = streamReader.ReadToEnd();
-            }
+            string body = await new StreamReader(controller.Request.Body).ReadToEndAsync();
             return Utility.SignatureValidation(signature: text, body: body, lineChannelSecret);
         }
         return false;
@@ -35,15 +35,13 @@ public static class MvcUtility
         }
     };
 
-    public static Webhook.Model.CallbackRequest WebhookResultDeserialize(ControllerBase controller)
+    public static async Task<Webhook.Model.CallbackRequest> WebhookResultDeserializeAsync(
+        ControllerBase controller
+    )
     {
-        string body = "";
         controller.Request.EnableBuffering();
         controller.Request.Body.Position = 0;
-        using (StreamReader streamReader = new(controller.Request.Body))
-        {
-            body = streamReader.ReadToEnd();
-        }
+        string body = await new StreamReader(controller.Request.Body).ReadToEndAsync();
         return JsonConvert.DeserializeObject<Webhook.Model.CallbackRequest>(
             body,
             _serializerSettings

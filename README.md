@@ -47,12 +47,12 @@ public class LineController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Post()
     {
-        if (!Linebotsdkx.MvcUtility.SignatureValidation(this, "<YOUR_CHANNEL_SECRET>"))
+        if (!(await Linebotsdkx.MvcUtility.SignatureValidationAsync(this, "<YOUR_CHANNEL_SECRET>")))
         {
             // invalid
             return BadRequest();
         }
-        var body = Linebotsdkx.MvcUtility.WebhookResultDeserialize(this);
+        var body = await Linebotsdkx.MvcUtility.WebhookResultDeserializeAsync(this);
         body.Events; // webhook event objects from LINE Platform
         body.Destination; // user ID of the bot
     }

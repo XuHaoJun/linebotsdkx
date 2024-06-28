@@ -69,7 +69,7 @@ var body2 = new PushMessageRequest(
 var resp2 = await client.PushMessageAsync(body2);
 ```
 
-## webhook example
+## Webhook echo example
 
 ```sh
 dotnet add package Linebotsdkx.Webhook
@@ -88,8 +88,28 @@ public class LineController : ControllerBase
             return BadRequest();
         }
         var body = await Linebotsdkx.MvcUtility.WebhookResultDeserializeAsync(this);
-        body.Events; // webhook event objects from LINE Platform
-        body.Destination; // user ID of the bot
+        Console.WriteLine(body.Events); // webhook event objects from LINE Platform
+        Console.WriteLine(body.Destination); // user ID of the bot
+        foreach (var x in body.Events)
+        {
+            if (x is MessageEvent && x.Source is UserSource)
+            {
+                var messageEvent = x as MessageEvent;
+                var userSource = x.Source as UserSource;
+                if (messageEvent.Message is TextMessageContent) 
+                {
+                  var textMessageContent = messageEvent.Message as TextMessageContent;
+                  var echoBody = new PushMessageRequest(
+                      to: userSource.UserId,
+                      messages: new List<Message>
+                      {
+                          new TextMessage(type: "text", text: textMessageContent.Text ),
+                      }
+                  );
+                  await client.PushMessageAsync(echoBody);
+                }
+            }
+        }
     }
 }
 ```

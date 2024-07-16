@@ -138,7 +138,7 @@ namespace Linebotsdkx.MessagingApi.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             return this.BaseValidate(validationContext);
         }
@@ -148,7 +148,7 @@ namespace Linebotsdkx.MessagingApi.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
             foreach (var x in base.BaseValidate(validationContext))
             {
@@ -157,13 +157,13 @@ namespace Linebotsdkx.MessagingApi.Model
             // Data (string) maxLength
             if (this.Data != null && this.Data.Length > 300)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Data, length must be less than 300.", new [] { "Data" });
+                yield return new ValidationResult("Invalid value for Data, length must be less than 300.", new [] { "Data" });
             }
 
             // Data (string) minLength
             if (this.Data != null && this.Data.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Data, length must be greater than 0.", new [] { "Data" });
+                yield return new ValidationResult("Invalid value for Data, length must be greater than 0.", new [] { "Data" });
             }
 
             yield break;

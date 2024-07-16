@@ -84,18 +84,18 @@ namespace Linebotsdkx.MessagingApi.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Name (string) maxLength
             if (this.Name != null && this.Name.Length > 20)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Name, length must be less than 20.", new [] { "Name" });
+                yield return new ValidationResult("Invalid value for Name, length must be less than 20.", new [] { "Name" });
             }
 
             // IconUrl (string) maxLength
             if (this.IconUrl != null && this.IconUrl.Length > 2000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for IconUrl, length must be less than 2000.", new [] { "IconUrl" });
+                yield return new ValidationResult("Invalid value for IconUrl, length must be less than 2000.", new [] { "IconUrl" });
             }
 
             yield break;

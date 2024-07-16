@@ -94,12 +94,12 @@ namespace Linebotsdkx.MessagingApi.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ImageUrl (string) maxLength
             if (this.ImageUrl != null && this.ImageUrl.Length > 2000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ImageUrl, length must be less than 2000.", new [] { "ImageUrl" });
+                yield return new ValidationResult("Invalid value for ImageUrl, length must be less than 2000.", new [] { "ImageUrl" });
             }
 
             yield break;

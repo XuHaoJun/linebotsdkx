@@ -94,18 +94,18 @@ namespace Linebotsdkx.MessagingApi.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // LoadingSeconds (int) maximum
             if (this.LoadingSeconds > (int)60)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LoadingSeconds, must be a value less than or equal to 60.", new [] { "LoadingSeconds" });
+                yield return new ValidationResult("Invalid value for LoadingSeconds, must be a value less than or equal to 60.", new [] { "LoadingSeconds" });
             }
 
             // LoadingSeconds (int) minimum
             if (this.LoadingSeconds < (int)5)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LoadingSeconds, must be a value greater than or equal to 5.", new [] { "LoadingSeconds" });
+                yield return new ValidationResult("Invalid value for LoadingSeconds, must be a value greater than or equal to 5.", new [] { "LoadingSeconds" });
             }
 
             yield break;

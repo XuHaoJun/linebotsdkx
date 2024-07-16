@@ -104,54 +104,54 @@ namespace Linebotsdkx.MessagingApi.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // X (long) maximum
             if (this.X > (long)2147483647)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for X, must be a value less than or equal to 2147483647.", new [] { "X" });
+                yield return new ValidationResult("Invalid value for X, must be a value less than or equal to 2147483647.", new [] { "X" });
             }
 
             // X (long) minimum
             if (this.X < (long)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for X, must be a value greater than or equal to 0.", new [] { "X" });
+                yield return new ValidationResult("Invalid value for X, must be a value greater than or equal to 0.", new [] { "X" });
             }
 
             // Y (long) maximum
             if (this.Y > (long)2147483647)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Y, must be a value less than or equal to 2147483647.", new [] { "Y" });
+                yield return new ValidationResult("Invalid value for Y, must be a value less than or equal to 2147483647.", new [] { "Y" });
             }
 
             // Y (long) minimum
             if (this.Y < (long)0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Y, must be a value greater than or equal to 0.", new [] { "Y" });
+                yield return new ValidationResult("Invalid value for Y, must be a value greater than or equal to 0.", new [] { "Y" });
             }
 
             // Width (long) maximum
             if (this.Width > (long)2147483647)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Width, must be a value less than or equal to 2147483647.", new [] { "Width" });
+                yield return new ValidationResult("Invalid value for Width, must be a value less than or equal to 2147483647.", new [] { "Width" });
             }
 
             // Width (long) minimum
             if (this.Width < (long)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Width, must be a value greater than or equal to 1.", new [] { "Width" });
+                yield return new ValidationResult("Invalid value for Width, must be a value greater than or equal to 1.", new [] { "Width" });
             }
 
             // Height (long) maximum
             if (this.Height > (long)2147483647)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Height, must be a value less than or equal to 2147483647.", new [] { "Height" });
+                yield return new ValidationResult("Invalid value for Height, must be a value less than or equal to 2147483647.", new [] { "Height" });
             }
 
             // Height (long) minimum
             if (this.Height < (long)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Height, must be a value greater than or equal to 1.", new [] { "Height" });
+                yield return new ValidationResult("Invalid value for Height, must be a value greater than or equal to 1.", new [] { "Height" });
             }
 
             yield break;

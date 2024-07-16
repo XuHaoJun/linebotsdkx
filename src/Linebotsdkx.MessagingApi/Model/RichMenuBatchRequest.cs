@@ -94,18 +94,18 @@ namespace Linebotsdkx.MessagingApi.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // ResumeRequestKey (string) maxLength
             if (this.ResumeRequestKey != null && this.ResumeRequestKey.Length > 100)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ResumeRequestKey, length must be less than 100.", new [] { "ResumeRequestKey" });
+                yield return new ValidationResult("Invalid value for ResumeRequestKey, length must be less than 100.", new [] { "ResumeRequestKey" });
             }
 
             // ResumeRequestKey (string) minLength
             if (this.ResumeRequestKey != null && this.ResumeRequestKey.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ResumeRequestKey, length must be greater than 1.", new [] { "ResumeRequestKey" });
+                yield return new ValidationResult("Invalid value for ResumeRequestKey, length must be greater than 1.", new [] { "ResumeRequestKey" });
             }
 
             if (this.ResumeRequestKey != null) {

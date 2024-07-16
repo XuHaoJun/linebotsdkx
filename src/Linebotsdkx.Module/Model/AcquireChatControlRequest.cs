@@ -86,12 +86,12 @@ namespace Linebotsdkx.Module.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Ttl (int) maximum
             if (this.Ttl > (int)31536000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Ttl, must be a value less than or equal to 31536000.", new [] { "Ttl" });
+                yield return new ValidationResult("Invalid value for Ttl, must be a value less than or equal to 31536000.", new [] { "Ttl" });
             }
 
             yield break;

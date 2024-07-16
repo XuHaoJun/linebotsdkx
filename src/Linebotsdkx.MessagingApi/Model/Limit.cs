@@ -84,12 +84,12 @@ namespace Linebotsdkx.MessagingApi.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Max (int) minimum
             if (this.Max < (int)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Max, must be a value greater than or equal to 1.", new [] { "Max" });
+                yield return new ValidationResult("Invalid value for Max, must be a value greater than or equal to 1.", new [] { "Max" });
             }
 
             yield break;

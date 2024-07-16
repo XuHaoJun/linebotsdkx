@@ -97,7 +97,7 @@ namespace Linebotsdkx.MessagingApi.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             return this.BaseValidate(validationContext);
         }
@@ -107,7 +107,7 @@ namespace Linebotsdkx.MessagingApi.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        protected IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
+        protected IEnumerable<ValidationResult> BaseValidate(ValidationContext validationContext)
         {
             foreach (var x in base.BaseValidate(validationContext))
             {
@@ -116,13 +116,13 @@ namespace Linebotsdkx.MessagingApi.Model
             // ClipboardText (string) maxLength
             if (this.ClipboardText != null && this.ClipboardText.Length > 1000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ClipboardText, length must be less than 1000.", new [] { "ClipboardText" });
+                yield return new ValidationResult("Invalid value for ClipboardText, length must be less than 1000.", new [] { "ClipboardText" });
             }
 
             // ClipboardText (string) minLength
             if (this.ClipboardText != null && this.ClipboardText.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ClipboardText, length must be greater than 1.", new [] { "ClipboardText" });
+                yield return new ValidationResult("Invalid value for ClipboardText, length must be greater than 1.", new [] { "ClipboardText" });
             }
 
             yield break;

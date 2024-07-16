@@ -84,30 +84,30 @@ namespace Linebotsdkx.MessagingApi.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Width (long) maximum
             if (this.Width > (long)2147483647)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Width, must be a value less than or equal to 2147483647.", new [] { "Width" });
+                yield return new ValidationResult("Invalid value for Width, must be a value less than or equal to 2147483647.", new [] { "Width" });
             }
 
             // Width (long) minimum
             if (this.Width < (long)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Width, must be a value greater than or equal to 1.", new [] { "Width" });
+                yield return new ValidationResult("Invalid value for Width, must be a value greater than or equal to 1.", new [] { "Width" });
             }
 
             // Height (long) maximum
             if (this.Height > (long)2147483647)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Height, must be a value less than or equal to 2147483647.", new [] { "Height" });
+                yield return new ValidationResult("Invalid value for Height, must be a value less than or equal to 2147483647.", new [] { "Height" });
             }
 
             // Height (long) minimum
             if (this.Height < (long)1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Height, must be a value greater than or equal to 1.", new [] { "Height" });
+                yield return new ValidationResult("Invalid value for Height, must be a value greater than or equal to 1.", new [] { "Height" });
             }
 
             yield break;

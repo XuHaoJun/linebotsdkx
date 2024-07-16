@@ -99,18 +99,18 @@ namespace Linebotsdkx.Webhook.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Destination (string) maxLength
             if (this.Destination != null && this.Destination.Length > 33)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Destination, length must be less than 33.", new [] { "Destination" });
+                yield return new ValidationResult("Invalid value for Destination, length must be less than 33.", new [] { "Destination" });
             }
 
             // Destination (string) minLength
             if (this.Destination != null && this.Destination.Length < 33)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Destination, length must be greater than 33.", new [] { "Destination" });
+                yield return new ValidationResult("Invalid value for Destination, length must be greater than 33.", new [] { "Destination" });
             }
 
             if (this.Destination != null) {

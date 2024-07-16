@@ -94,18 +94,18 @@ namespace Linebotsdkx.ManageAudience.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Description (string) maxLength
             if (this.Description != null && this.Description.Length > 120)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 120.", new [] { "Description" });
+                yield return new ValidationResult("Invalid value for Description, length must be less than 120.", new [] { "Description" });
             }
 
             // ClickUrl (string) maxLength
             if (this.ClickUrl != null && this.ClickUrl.Length > 2000)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ClickUrl, length must be less than 2000.", new [] { "ClickUrl" });
+                yield return new ValidationResult("Invalid value for ClickUrl, length must be less than 2000.", new [] { "ClickUrl" });
             }
 
             yield break;

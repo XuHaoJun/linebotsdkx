@@ -74,18 +74,18 @@ namespace Linebotsdkx.MessagingApi.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Endpoint (string) maxLength
             if (this.Endpoint != null && this.Endpoint.Length > 500)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Endpoint, length must be less than 500.", new [] { "Endpoint" });
+                yield return new ValidationResult("Invalid value for Endpoint, length must be less than 500.", new [] { "Endpoint" });
             }
 
             // Endpoint (string) minLength
             if (this.Endpoint != null && this.Endpoint.Length < 0)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Endpoint, length must be greater than 0.", new [] { "Endpoint" });
+                yield return new ValidationResult("Invalid value for Endpoint, length must be greater than 0.", new [] { "Endpoint" });
             }
 
             yield break;

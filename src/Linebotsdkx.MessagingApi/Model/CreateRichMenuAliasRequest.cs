@@ -99,18 +99,18 @@ namespace Linebotsdkx.MessagingApi.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // RichMenuAliasId (string) maxLength
             if (this.RichMenuAliasId != null && this.RichMenuAliasId.Length > 32)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RichMenuAliasId, length must be less than 32.", new [] { "RichMenuAliasId" });
+                yield return new ValidationResult("Invalid value for RichMenuAliasId, length must be less than 32.", new [] { "RichMenuAliasId" });
             }
 
             // RichMenuAliasId (string) minLength
             if (this.RichMenuAliasId != null && this.RichMenuAliasId.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RichMenuAliasId, length must be greater than 1.", new [] { "RichMenuAliasId" });
+                yield return new ValidationResult("Invalid value for RichMenuAliasId, length must be greater than 1.", new [] { "RichMenuAliasId" });
             }
 
             if (this.RichMenuAliasId != null) {

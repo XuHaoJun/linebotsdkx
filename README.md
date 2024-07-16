@@ -95,7 +95,7 @@ public class LineController : ControllerBase
             if (x is MessageEvent && x.Source is UserSource)
             {
                 var messageEvent = x as MessageEvent;
-                if (messageEvent.Message is TextMessageContent) 
+                if (messageEvent.Message is TextMessageContent)
                 {
                   var userSource = x.Source as UserSource;
                   var textMessageContent = messageEvent.Message as TextMessageContent;
@@ -113,6 +113,10 @@ public class LineController : ControllerBase
     }
 }
 ```
+
+## Development
+
+exec `run.sh` that will use `openapi-generator` generate code.
 
 ## Issues
 
